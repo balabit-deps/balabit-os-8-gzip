@@ -1,3 +1,22 @@
+gzip (1.10-0ubuntu4.1) focal-security; urgency=medium
+
+  * SECURITY UPDATE: arbitrary file override with crafted file names
+    - debian/patches/CVE-2022-1271-1.patch: avoid exploit via multi-newline
+      file names in zgrep.in.
+    - debian/patches/CVE-2022-1271-2.patch: add test in tests/Makefile.am,
+      tests/zgrep-abuse.
+    - debian/patches/CVE-2022-1271-3.patch: port to POSIX sed in zgrep.in.
+    - debian/patches/CVE-2022-1271-4.patch: optimize out a grep in
+      gzexe.in.
+    - debian/patches/CVE-2022-1271-5.patch: use C locale more often in
+      gzexe.in, sample/zfile, zdiff.in, zgrep.in, znew.in.
+    - debian/patches/CVE-2022-1271-6.patch: fix "binary file matches"
+      mislabeling in tests/Makefile.am, tests/zgrep-binary, zgrep.in.
+    - debian/rules: fix permissions on new test scripts.
+    - CVE-2022-1271
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 08 Apr 2022 07:05:45 -0400
+
 gzip (1.10-0ubuntu4) focal; urgency=high
 
   * Rebuild with binutils 2.33.1-6ubuntu1 (LP: #1843479)
